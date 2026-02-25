@@ -149,3 +149,65 @@ h2 { margin-top: 0; font-size: 1.4rem; margin-bottom: 25px; }
 #linkedin:hover {
     text-decoration: underline;
 }
+
+/* Estilos de Proyectos */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.project-card {
+    background: #1c2128;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.project-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 212, 255, 0.1);
+}
+
+.project-card h3 {
+    color: var(--primary);
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+}
+
+.project-card p {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+}
+
+.project-link {
+    color: var(--text);
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Estilo especial para el proyecto WordPress */
+.wp-project {
+    border-left: 4px solid #21759b; /* Azul oficial de WordPress */
+}
+
+.sub-h3 {
+    font-size: 1rem;
+    color: var(--text-dim);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+body{
+    gap: 30px;
+}

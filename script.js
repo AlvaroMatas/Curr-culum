@@ -14,4 +14,15 @@ document.addEventListener("DOMContentLoaded", () => {
             else if(targetWidth.includes("Mínimo")) bar.style.width = "15%";
         });
     }, 300);
+
+    // Añade esto dentro de tu DOMContentLoaded
+const projectCards = document.querySelectorAll('.project-card');
+
+projectCards.forEach(card => {
+    card.addEventListener('click', (e) => {
+        const url = card.getAttribute('href');
+        console.log(`Navegando al proyecto: ${url}`);
+        // Aquí podrías añadir una animación de salida si quisieras
+    });
+});
 });
