@@ -1,19 +1,17 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.card');
+document.addEventListener("DOMContentLoaded", () => {
+    // Animación de las barras de progreso al cargar la página
+    const bars = document.querySelectorAll('.fill');
     
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = 1;
-                entry.target.style.transform = 'translateY(0)';
-            }
+    // Un pequeño retardo para que se vea el efecto de carga
+    setTimeout(() => {
+        bars.forEach(bar => {
+            // Obtenemos el ancho que pusimos en el HTML y lo aplicamos
+            const targetWidth = bar.parentElement.previousElementSibling.querySelector('.pct').innerText;
+            // Si el texto es "Avanzado" ponemos 95%, si es "85%" lo limpiamos, etc.
+            if(targetWidth.includes("Avanzado")) bar.style.width = "95%";
+            else if(targetWidth.includes("85%")) bar.style.width = "85%";
+            else if(targetWidth.includes("Medio-Bajo")) bar.style.width = "40%";
+            else if(targetWidth.includes("Mínimo")) bar.style.width = "15%";
         });
-    }, { threshold: 0.1 });
-
-    cards.forEach(card => {
-        card.style.opacity = 0;
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'all 0.6s ease-out';
-        observer.observe(card);
-    });
+    }, 300);
 });
