@@ -1,0 +1,96 @@
+:root {
+    --primary: #00d4ff;
+    --bg: #0a0b10;
+    --card-bg: #161b22;
+    --text: #e6edf3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 5%;
+    background: rgba(10, 11, 16, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo { font-weight: bold; font-size: 1.5rem; }
+.logo span { color: var(--primary); }
+
+nav ul { display: flex; list-style: none; }
+nav ul li { margin-left: 20px; }
+nav ul li a { text-decoration: none; color: white; transition: 0.3s; }
+nav ul li a:hover { color: var(--primary); }
+
+header {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle, #1a1f35 0%, #0a0b10 100%);
+}
+
+.hero h1 { font-size: 3.5rem; margin-bottom: 10px; }
+.subtitle { color: var(--primary); font-size: 1.2rem; font-weight: bold; }
+.description { max-width: 600px; margin: 20px auto; opacity: 0.8; }
+
+.container { padding: 80px 10%; }
+.section-title { text-align: center; margin-bottom: 40px; font-size: 2rem; }
+
+.card {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border-left: 5px solid var(--primary);
+    transition: transform 0.3s;
+}
+.card:hover { transform: translateY(-5px); }
+
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+
+.bar { background: #30363d; height: 8px; border-radius: 5px; margin-bottom: 15px; }
+.progress { background: var(--primary); height: 100%; border-radius: 5px; }
+
+.badge {
+    display: inline-block;
+    padding: 5px 15px;
+    background: #238636;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin: 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 60px;
+    background: #0d1117;
+}
+
+@media (max-width: 768px) {
+    .grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2.5rem; }
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
